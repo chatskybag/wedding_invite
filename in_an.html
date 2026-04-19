@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Scroll Landing</title>
+    <!-- Подключаем стили анимации -->
+    <link href="https://unpkg.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="screen intro">
+        <h1>Листайте вниз</h1>
+    </section>
+
+    <!-- Контейнер для картинок -->
+    <div class="content">
+
+        <!-- Картинка слева -->
+        <div class="item left" data-aos="fade-right">
+            <img src="img/img1.jpg" alt="Work 1">
+        </div>
+
+        <!-- Картинка справа -->
+        <div class="item right" data-aos="fade-left">
+            <img src="img/img2.jpg" alt="Work 2">
+        </div>
+
+        <!-- Картинка по центру с зумом -->
+        <div class="item center" data-aos="zoom-in">
+            <img src="img/img3.jpg" alt="Work 3">
+        </div>
+
+        <!-- Еще одна справа -->
+        <div class="item right" data-aos="flip-up">
+            <img src="img/photo4.jpg" alt="Work 4">
+        </div>
+
+    </div>
+
+    <section class="screen footer">
+        <h2>Финал</h2>
+    </section>
+
+    <!-- Скрипты анимации -->
+    <script src="https://unpkg.com"></script>
+    <script>
+        // Инициализация анимаций
+        AOS.init({
+            duration: 1000, // Скорость анимации (мс)
+            once: false,     // Анимация срабатывает каждый раз при скролле (вверх и вниз)
+        });
+    </script>
+</body>
+</html>

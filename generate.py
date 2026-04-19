@@ -1,0 +1,113 @@
+"""
+background-color: #f4f1ef;
+"""
+
+import os
+from jinja2 import Template
+
+# Список ваших изображений в нужном порядке
+images = ["4.png", "5.png", "6.png"]
+fill_link = "https://your-google-form-link.com"
+
+html_template = """
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Лендинг</title>
+    <!-- Подключаем шрифт Montserrat из Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; padding: 0; background: #f0f0f0; 
+            display: flex; flex-direction: column; align-items: center;
+            font-family: "Marck Script", cursive; /* Применяем шрифт ко всей странице */
+            font-weight: 600;
+        }
+
+        .page-container {
+            width: 100%; max-width: 800px; background: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1); position: relative;
+        }
+
+        .image-wrapper { 
+            position: relative; width: 100%; 
+            margin-top: -5px;
+        }
+
+        img { 
+            width: 100%; height: auto; display: block; 
+            margin: -5px auto 0; position: relative; border: none;
+        }
+
+        img:first-child { margin-top: 0; }
+
+        /* Контейнер теперь сам центрирует кнопку без transform */
+        .button-overlay {
+            position: absolute;
+            bottom: 5%; 
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center; /* Центровка по горизонтали */
+            z-index: 2000;
+        }
+
+        .btn { 
+            background-color: #f4f1ef; 
+            color: #000000; 
+            padding: 18px 40px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-size: 35px; 
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s ease; /* Плавность только для масштаба */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
+            font-family: "Marck Script", cursive;
+            font-weight: 600;
+        }
+        
+        /* Теперь при наведении кнопка просто увеличивается, никуда не улетая */
+        .btn:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+
+        @media (max-width: 480px) {
+            .page-container { box-shadow: none; }
+            .btn { font-size: 18px; padding: 12px 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        {% for img in images %}
+            {% if loop.last %}
+                <!-- Оборачиваем последнюю картинку, чтобы наложить кнопку -->
+                <div class="image-wrapper" style="z-index: {{ loop.index }};">
+                    <img src="assets/{{ img }}" alt="Last Page">
+                    <div class="button-overlay">
+                        <a href="{{ link }}" class="btn">Для заполнения</a>
+                    </div>
+                </div>
+            {% else %}
+                <img src="assets/{{ img }}" style="z-index: {{ loop.index }};" alt="Page {{ loop.index }}">
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
+"""
+
+template = Template(html_template)
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(template.render(images=images, link=fill_link))
+
+print("Сайт index.html успешно создан!")
