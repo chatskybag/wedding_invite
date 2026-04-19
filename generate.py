@@ -6,8 +6,8 @@ import os
 from jinja2 import Template
 
 # Список ваших изображений в нужном порядке
-images = ["4.png", "5.png", "6.png"]
-fill_link = "https://your-google-form-link.com"
+images = ["1.png", "2.png", "3.png", "4.png", "5.png"]
+fill_link = "https://docs.google.com/forms/d/e/1FAIpQLSeYOH_tiWbkGQbo0YM89ucBdW7G_cxbRpeNNZ4OgSdbNWVVgA/viewform?usp=dialog"
 
 html_template = """
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ html_template = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Лендинг</title>
+    <title>Карина и Вадим 21.06.2026</title>
     <!-- Подключаем шрифт Montserrat из Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,7 @@ html_template = """
         /* Контейнер теперь сам центрирует кнопку без transform */
         .button-overlay {
             position: absolute;
-            bottom: 5%; 
+            bottom: 64%; 
             left: 0;
             right: 0;
             display: flex;
@@ -59,6 +59,9 @@ html_template = """
         .btn { 
             background-color: #f4f1ef; 
             color: #000000; 
+            width: 350px;  /* Желаемая ширина */
+            height: 150px; /* Желаемая высота */
+            opacity: 0;
             padding: 18px 40px; 
             text-decoration: none; 
             border-radius: 30px; 

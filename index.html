@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Лендинг</title>
+    <title>Карина и Вадим 21.06.2026</title>
     <!-- Подключаем шрифт Montserrat из Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
         /* Контейнер теперь сам центрирует кнопку без transform */
         .button-overlay {
             position: absolute;
-            bottom: 5%; 
+            bottom: 64%; 
             left: 0;
             right: 0;
             display: flex;
@@ -48,6 +48,9 @@
         .btn { 
             background-color: #f4f1ef; 
             color: #000000; 
+            width: 350px;  /* Желаемая ширина */
+            height: 150px; /* Желаемая высота */
+            opacity: 0;
             padding: 18px 40px; 
             text-decoration: none; 
             border-radius: 30px; 
@@ -79,19 +82,27 @@
     <div class="page-container">
         
             
-                <img src="assets/4.png" style="z-index: 1;" alt="Page 1">
+                <img src="assets/1.png" style="z-index: 1;" alt="Page 1">
             
         
             
-                <img src="assets/5.png" style="z-index: 2;" alt="Page 2">
+                <img src="assets/2.png" style="z-index: 2;" alt="Page 2">
+            
+        
+            
+                <img src="assets/3.png" style="z-index: 3;" alt="Page 3">
+            
+        
+            
+                <img src="assets/4.png" style="z-index: 4;" alt="Page 4">
             
         
             
                 <!-- Оборачиваем последнюю картинку, чтобы наложить кнопку -->
-                <div class="image-wrapper" style="z-index: 3;">
-                    <img src="assets/6.png" alt="Last Page">
+                <div class="image-wrapper" style="z-index: 5;">
+                    <img src="assets/5.png" alt="Last Page">
                     <div class="button-overlay">
-                        <a href="https://your-google-form-link.com" class="btn">Для заполнения</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYOH_tiWbkGQbo0YM89ucBdW7G_cxbRpeNNZ4OgSdbNWVVgA/viewform?usp=dialog" class="btn">Для заполнения</a>
                     </div>
                 </div>
             
