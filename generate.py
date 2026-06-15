@@ -5,6 +5,7 @@ background-color: #f4f1ef;
 import os
 from jinja2 import Template
 
+
 # Список ваших изображений в нужном порядке
 images = ["1.png", "2_new.png", "3.png", "4.png", "5.png"]
 fill_link = "https://docs.google.com/forms/d/e/1FAIpQLSeYOH_tiWbkGQbo0YM89ucBdW7G_cxbRpeNNZ4OgSdbNWVVgA/viewform?usp=dialog"
